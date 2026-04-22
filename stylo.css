@@ -1,0 +1,269 @@
+/* ==========================================================================
+   1. RESET E VARIÁVEIS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+  --cor-fundo: #fffde7; /* Amarelo suave */
+  --primaria: #d4a373; /* Nude/Bronze */
+  --escura: #1a1a1a;
+  --branca: #ffffff;
+  --whatsapp: #17271d;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--escura);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVEGAÇÃO
+   ========================================================================== */
+header {
+  background: var(--branca);
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-centered {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* Centralização do Logo */
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--primaria);
+}
+
+/* Contato WhatsApp Topo */
+.user-whatsapp a {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--escura);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid var(--escura);
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.user-whatsapp a:hover {
+  background-color: var(--whatsapp);
+  border-color: var(--whatsapp);
+  color: white;
+}
+
+.spacer {
+  width: 150px; /* Mantém o equilíbrio visual com o lado do contato */
+}
+
+/* ==========================================================================
+   3. BANNER (HERO)
+   ========================================================================== */
+.hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("./img/pexels-michael-obstoj-1772571864-32388553.jpg");
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   4. GRADE DE PRODUTOS
+   ========================================================================== */
+.secao-titulo {
+  color: var(--primaria);
+  margin: 40px 0 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.card-produto {
+  background: var(--branca);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-produto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.info-produto {
+  padding: 15px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.info-produto h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.preco {
+  color: var(--primaria);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Botão WhatsApp Produto */
+
+.btn-whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background-color: var(--escura);
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  background-color: rgb(98, 197, 98);
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   5. RODAPÉ
+   ========================================================================== */
+footer {
+  background: var(--escura);
+  color: white;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: var(--primaria);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .grade-produtos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card-produto img {
+    height: 180px;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .navbar-centered {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-whatsapp span {
+    display: none; /* Esconde o texto, deixa só o ícone */
+  }
+
+  .user-whatsapp a {
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
